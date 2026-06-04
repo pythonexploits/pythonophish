@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Make Deb Package for Phishing (^.^)
-_PACKAGE=phishing
+# Make Deb Package for pythonophish (^.^)
+_PACKAGE=pythonophish
 _VERSION=1.0
 _ARCH="all"
 PKG_NAME="${_PACKAGE}_${_VERSION}_${_ARCH}.deb"
@@ -32,8 +32,8 @@ Version: ${_VERSION}
 Architecture: ${_ARCH}
 Maintainer: @Pythonx_100
 Depends: ${_depend}
-Homepage: https://github.com/pythonexploits/phishing
-Description: An automated phishing tool with 5 templates and this Tool is made for educational purpose only !
+Homepage: https://github.com/pythonexploits/pythonophish
+Description: An automated pythonophish tool with 5 templates and this Tool is made for educational purpose only !
 CONTROL_EOF
 
 cat <<- PRERM_EOF > pythonexploits/DEBIAN/prerm
