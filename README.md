@@ -51,7 +51,7 @@ pkg install git
 ```
 Just Clone this repository
   ```
-git clone --depth=1 https://github.com/pythonyoutobe/phishing.git
+git clone --depth=1 https://github.com/pythonyoutobe/pythonophish.git
 ```
 Just continue to run **Phishing**
 ```
