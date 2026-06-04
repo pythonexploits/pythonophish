@@ -22,33 +22,33 @@ _depend+="curl, php, unzip"
 _bin_dir+="usr/bin"
 _opt_dir+="opt/${_PACKAGE}"
 
-if [[ -d "pythonyoutobe" ]]; then rm -fr pythonyoutobe; fi
-mkdir -p pythonyoutobe
-mkdir -p pythonyoutobe/${_bin_dir} pythonyoutobe/$_opt_dir pythonyoutobe/DEBIAN 
+if [[ -d "pythonexploits" ]]; then rm -fr pythonexploits; fi
+mkdir -p pythonexploits
+mkdir -p pythonexploits/${_bin_dir} pythonexploits/$_opt_dir pythonexploits/DEBIAN 
 
-cat <<- CONTROL_EOF > pythonyoutobe/DEBIAN/control
+cat <<- CONTROL_EOF > pythonexploits/DEBIAN/control
 Package: ${_PACKAGE}
 Version: ${_VERSION}
 Architecture: ${_ARCH}
 Maintainer: @Pythonx_100
 Depends: ${_depend}
-Homepage: https://github.com/pythonyoutobe/phishing
+Homepage: https://github.com/pythonexploits/phishing
 Description: An automated phishing tool with 5 templates and this Tool is made for educational purpose only !
 CONTROL_EOF
 
-cat <<- PRERM_EOF > pythonyoutobe/DEBIAN/prerm
+cat <<- PRERM_EOF > pythonexploits/DEBIAN/prerm
 #!/bin/bash
 rm -fr $_opt_dir
 exit 0
 PRERM_EOF
 
-chmod 755 pythonyoutobe/DEBIAN
-chmod 755 pythonyoutobe/DEBIAN/{control,prerm}
-cp -fr scripts/launch.sh pythonyoutobe/$_bin_dir/$_PACKAGE
-chmod 755 pythonyoutobe/$_bin_dir/$_PACKAGE
-cp -fr .github/ .sites/ LICENSE README.md phishing.sh pythonyoutobe/$_opt_dir
-dpkg-deb --build pythonyoutobe${PKG_NAME}
-rm -fr pythonyoutobe
+chmod 755 pythonexploits/DEBIAN
+chmod 755 pythonexploits/DEBIAN/{control,prerm}
+cp -fr scripts/launch.sh pythonexploits/$_bin_dir/$_PACKAGE
+chmod 755 pythonexploits/$_bin_dir/$_PACKAGE
+cp -fr .github/ .sites/ LICENSE README.md phishing.sh pythonexploits/$_opt_dir
+dpkg-deb --build pythonexploits${PKG_NAME}
+rm -fr pythonexploits
 
 
 
