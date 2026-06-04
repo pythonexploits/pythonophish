@@ -2,13 +2,13 @@
 
 
 if [[ $(uname -o) == *'Android'* ]];then
-	PHISHING_ROOT="/data/data/com.termux/files/usr/opt/phishing"
+	PHISHING_ROOT="/data/data/com.termux/files/usr/opt/pythonophish"
 else
-	export PHISHING_ROOT="/opt/phishing"
+	export PHISHING_ROOT="/opt/pythonophish"
 fi
 
 if [[ $1 == '-h' || $1 == 'help' ]]; then
-	echo "To run Phishing type \`phishing\` in your cmd"
+	echo "To run pythonophish type \`pythonophish\` in your cmd"
 	echo
 	echo "Help:"
 	echo " -h | help : Print this menu & Exit"
