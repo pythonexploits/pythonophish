@@ -1,5 +1,5 @@
 #!/bin/bash
-      Copyright (C) 2023  MAMBA MENTALITY (https://github.com/PYTHON)
+      Copyright (C) 2023  MAMBA MENTALITY (https://github.com/pythonexploits)
 
 
 __version__="1"
@@ -267,8 +267,7 @@ about() {
 	{ clear; banner; echo; }
 	cat <<- EOF
 		${GREEN} Author   ${RED}:  ${ORANGE}MAMBA MENTALITY ${RED}[ ${ORANGE}PYTHON ${RED}]
-		${GREEN} Github   ${RED}:  ${CYAN}https://github.com/PYTHON/phishing
-		${GREEN} Facebook ${RED}:  ${CYAN}https://facebook.com/mambamentality9mm
+		${GREEN} Github   ${RED}:  ${CYAN}https://github.com/pythonexploits
 		${GREEN} Version  ${RED}:  ${ORANGE}${__version__}
 
 		${WHITE} ${REDBG}Warning:${RESETBG}
