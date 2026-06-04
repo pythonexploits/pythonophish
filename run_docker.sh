@@ -9,9 +9,9 @@ if [[ ! -d "$BASE_DIR/auth" ]]; then
 	mkdir -p "$BASE_DIR/auth"
 fi
 
-CONTAINER="phishing"
-IMAGE="pythonyoutobe/phishing:latest"
-IMG_MIRROR="ghcr.io/pythonyoutobe/phishing:latest"
+CONTAINER="pythonophish"
+IMAGE="pythonexploits/pythonophish:latest"
+IMG_MIRROR="ghcr.io/pythonexploits/pythonophish:latest"
 MOUNT_LOCATION=${BASE_DIR}/auth
 check_container=$(docker ps --all --format "{{.Names}}")
 
@@ -19,7 +19,7 @@ if [[ ! $check_container == $CONTAINER ]]; then
 	echo "Creating new container..."
 	docker create \
 		--interactive --tty \
-		--volume ${MOUNT_LOCATION}:/phishing/auth/ \
+		--volume ${MOUNT_LOCATION}:/pythonophish/auth/ \
 		--network host \
 		--name "${CONTAINER}" \
 		"${IMAGE}"
@@ -27,4 +27,4 @@ fi
 
 docker start --interactive "${CONTAINER}"
 
-# docker run --rm -ti --network="host" -v ${MOUNT_LOCATION}:/phishing/auth/ --name "$CONTAINER" "$IMAGE"
+# docker run --rm -ti --network="host" -v ${MOUNT_LOCATION}:/pythonophish/auth/ --name "$CONTAINER" "$IMAGE"
